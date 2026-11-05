@@ -9,7 +9,7 @@ DOCUMENT_DIR = BASE_DIR / "documents"
 print(f"doc dir ===> ${DOCUMENT_DIR}")
 
 def search_documents(query: str) -> list[dict]:
-    """Find sample documents containing relevant query terms."""
+    """Find sample documents containing relevant query."""
     terms = set()
     for word in query.split():
         cleaned_word = word.lower().strip(".,?!:")
@@ -37,4 +37,4 @@ def search_documents(query: str) -> list[dict]:
         key=lambda item: item["matched_terms"],
         reverse=True,
     )
-    return results[:3]
+    return results[:1]

@@ -1,0 +1,42 @@
+# ========================================
+# Node.js
+# ========================================
+# Dependency directories
+node_modules/
+
+# ========================================
+# Python
+# ========================================
+# Byte-compiled / optimized / DLL files
+__pycache__/
+
+# Distribution / packaging
+dist/
+
+# pyenv
+#   For a library or project, you might want to ignore the Python version e.g.
+#   with .python-version file, but not if it is an application per se
+.python-version
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# ========================================
+# Environment Variables & Secrets
+# ========================================
+.env
+.env.*
+!.env.example
+
+# ========================================
+# IDEs and Editors
+# ========================================
+# VS Code
+.vscode/
+
