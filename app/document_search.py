@@ -37,4 +37,4 @@ def search_documents(query: str) -> list[dict]:
         key=lambda item: item["matched_terms"],
         reverse=True,
     )
-    return results[:1]
+    return results[:3]
