@@ -14,7 +14,7 @@ app = FastAPI()
 # Allow React frontend communication
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:8000"],
+    allow_origins=["http://localhost:5173"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -31,7 +31,7 @@ def home():
 
 # API endpoint
 
-@app.post("/ask")
+@app.post("/userprompt")
 def ask_document(request: QuestionRequest):
 
     question = request.question
