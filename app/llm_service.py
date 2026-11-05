@@ -1,10 +1,19 @@
+import os
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
+from dotenv import load_dotenv
+
+# load the env variables from the local .env file
+load_dotenv()
+api_key = os.getenv("OPENAI_API_KEY")
 
 # Initialize LLM
 llm = ChatOpenAI(
     model="gpt-4o-mini",
-    temperature=0
+    temperature=0,
+    api_key=api_key,
+    timeout=30,
+    max_retries=1
 )
 
 # Create prompt template

@@ -1,14 +1,9 @@
-import os
-from dotenv import load_dotenv
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from document_search import search_documents
 from llm_service import generate_answer
 
-
-# load the env variables from the local .env file
-load_dotenv()
 app = FastAPI()
 
 # Allow React frontend communication
@@ -33,7 +28,7 @@ def home():
 
 @app.post("/userprompt")
 def ask_document(request: QuestionRequest):
-
+    print(f"Received in the python side : {request}")
     question = request.question
     # Step 1: Search documents
     results = search_documents(question)

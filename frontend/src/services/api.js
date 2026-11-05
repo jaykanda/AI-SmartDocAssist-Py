@@ -1,6 +1,7 @@
 const API_URL = "http://localhost:8000";
 
 export async function userPrompt(question) {
+    console.log(`backend received : ${question}`)
     const response = await fetch(`${API_URL}/userprompt`, {
         method: "POST",
         headers: {
