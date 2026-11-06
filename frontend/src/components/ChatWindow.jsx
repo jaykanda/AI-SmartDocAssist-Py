@@ -34,15 +34,19 @@ function ChatWindow() {
             <button style={{ padding: "10px", margin: "10px" }} onClick={handleAsk} disabled={loading}>
                 {loading ? "Processing..." : "Ask AI"}
             </button>
-
-            <div style={{ marginTop: "30px" }}>
-                <h3>AI Response</h3>
+            {
+                answer ? (
+                    <div style={{ marginTop: "30px" }}>
+                <h5>AI Bot says</h5>
                 <p>{answer}</p>
                 {/* <h4>Source Documents</h4>
                 {sources.map((source, index) => (
                     <p key={index}>{source}</p>
                 ))} */}
             </div>
+                ) : (<div>&nbsp;</div>)
+            }
+            
         </div>
     );
 }
