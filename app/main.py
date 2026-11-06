@@ -20,11 +20,12 @@ class QuestionRequest(BaseModel):
     question: str
 
 # API endpoint
+
 @app.post("/userprompt")
 def ask_document(request: QuestionRequest):
     print(f"Received in the python side : {request}")
     question = request.question
-    # Step 1: Search documents
+    # Search documents
     results = search_documents(question)
 
     if not results:
@@ -33,7 +34,7 @@ def ask_document(request: QuestionRequest):
             "sources": []
         }
 
-    # Step 2: Prepare document context
+    # Prepare document context
     context = ""
     for result in results:
         context += (
@@ -41,13 +42,13 @@ def ask_document(request: QuestionRequest):
             f"Content: {result['content']}\n"
         )
 
-    # Step 3: Send question and context to LLM
+    # Send question and context to LLM
     answer = generate_answer(
         question,
         context
     )
 
-    # Step 4: Return response
+    # Return response
     return {
         "question": question,
         "answer": answer,
