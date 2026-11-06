@@ -19,13 +19,7 @@ app.add_middleware(
 class QuestionRequest(BaseModel):
     question: str
 
-
-@app.get("/")
-def home():
-    return {"message": "Hello World"}
-
 # API endpoint
-
 @app.post("/userprompt")
 def ask_document(request: QuestionRequest):
     print(f"Received in the python side : {request}")

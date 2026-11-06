@@ -51,7 +51,7 @@ prompt = ChatPromptTemplate.from_messages([
 
 # Create LLM processing function
 def generate_answer(question, context):
-    chain = prompt | llm
+    chain = prompt | llm 
     response = chain.invoke({
         "question": question,
         "context": context
