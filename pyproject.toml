@@ -1,0 +1,16 @@
+[project]
+name = "ai-smartdocassist-py"
+version = "0.1.0"
+description = "A document assistant for company policy files"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi",
+    "uvicorn[standard]",
+    "langchain-openai",
+    "langchain-core",
+    "python-dotenv",
+]
+
+[tool.uv]
+package = false
